@@ -3,24 +3,22 @@
 }
 
 html.dark {
-  background-color: #0d0950;
-  color: #fff;
+  background-color: #000000;
+  color: #f5f5f5;
 }
 
-.dark .nav-links a {
-  color: #fff;
+.dark .text-primary {
+  color: #0074d9;
 }
-
-.sun {
-  fill: black;
+.dark .text-secondary {
+  color: #1abc9c;
 }
-.moon {
-  fill: transparent;
+.dark .link {
+  color: #4169e1;
 }
-
-.dark .sun {
-  fill: transparent;
+.dark .button {
+  color: #4b0082;
 }
-.dark .moon {
-  fill: white;
+.dark nav {
+  /* background-color: #4682b4; */
 }

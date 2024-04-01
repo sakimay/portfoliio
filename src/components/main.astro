@@ -1,4 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import myImage from "../assets/saki_avatar.png";
+---
 <section class="flex flex-col items-center">
+    <div>
+        <Image src={myImage} alt="saki avatar" />
+    </div>
     <h1>Isaac Mayné</h1>
     <h2>Desarrollador web</h2>
 </section>
