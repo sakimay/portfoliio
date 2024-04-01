@@ -1,0 +1,26 @@
+* {
+  font-family: "Lato";
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+.sun {
+  fill: black;
+}
+.moon {
+  fill: transparent;
+}
+
+.dark .sun {
+  fill: transparent;
+}
+.dark .moon {
+  fill: white;
+}

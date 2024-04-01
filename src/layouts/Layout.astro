@@ -1,5 +1,8 @@
 ---
 import "@fontsource/lato";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import "../styles/global.css";
 interface Props {
   title: string;
 }
@@ -7,22 +10,18 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portfolio Isaac Mayné" />
+    <meta name="description" content="Portfolio Isaac MaynÃ©" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
-<style is:global>
-  * {
-    font-family: "Lato";
-	background-color: black;
-  }
-</style>
