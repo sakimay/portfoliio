@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
-import myImage from "../assets/saki_avatar.png";
+import myImage from "../assets/isaac_avatar.jpg";
 import Social from "./social.astro";
 import GithubIcon from "../icons/github.astro";
 import LinkedinIcon from "../icons/linkedin.astro";
 ---
-<section class="flex flex-col md:flex-row items-center py-6">
+<section class="flex flex-col justify-center md:flex-row items-center py-6">
     <div>
-        <Image src={myImage} alt="saki avatar" width={200} height={200}/>
+        <Image src={myImage} alt="saki avatar" width={180} height={180} class='rounded-full'/>
     </div>
-    <div class="flex flex-col justify-center">
+    <div class="flex flex-col justify-center pt-6 md:pl-6">
         <h1 class="text-4xl text-center md:text-left" >Isaac Mayné</h1>
         <h2 class="text-xl font-thin text-center md:text-left">Desarrollador web Fullstack</h2>
         <div class="mt-4 flex items-center justify-center md:justify-start">
