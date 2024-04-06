@@ -4,14 +4,20 @@ import myImage from "../assets/isaac_avatar.jpg";
 import Social from "./social.astro";
 import GithubIcon from "../icons/github.astro";
 import LinkedinIcon from "../icons/linkedin.astro";
+
+let initial_year = 2020;
+let current_year = new Date().getFullYear();
+let años_de_experiencia = current_year - initial_year;
+
 ---
-<section class="flex flex-col justify-center md:flex-row items-center py-6">
+<section class="flex flex-col justify-center md:flex-row items-center py-10">
     <div>
         <Image src={myImage} alt="saki avatar" width={180} height={180} class='rounded-full'/>
     </div>
     <div class="flex flex-col justify-center pt-6 md:pl-6">
         <h1 class="text-4xl text-center md:text-left" >Isaac Mayné</h1>
-        <h2 class="text-xl font-thin text-center md:text-left">Desarrollador web Fullstack</h2>
+        <h2 class="text-xl font-thin text-center md:text-left">Desarrollador Fullstack</h2>
+        <p>Técnico superior en desarrollo de aplicaciones web, con más de {años_de_experiencia} de experiencia.</p>
         <div class="mt-4 flex items-center justify-center md:justify-start">
             <Social platform="github" username="sakimay" className="mr-2">
                 <GithubIcon />
@@ -22,3 +28,5 @@ import LinkedinIcon from "../icons/linkedin.astro";
         </div>
     </div>
 </section>
+
+
