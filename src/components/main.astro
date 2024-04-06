@@ -15,15 +15,15 @@ let años_de_experiencia = current_year - initial_year;
         <Image src={myImage} alt="saki avatar" width={180} height={180} class='rounded-full'/>
     </div>
     <div class="flex flex-col justify-center pt-6 md:pl-6">
-        <h1 class="text-4xl text-center md:text-left" >Isaac Mayné</h1>
-        <h2 class="text-xl font-thin text-center md:text-left">Desarrollador Fullstack</h2>
-        <p>Técnico superior en desarrollo de aplicaciones web, con más de {años_de_experiencia} de experiencia.</p>
+        <h1 class="text-4xl text-center md:text-left text-zinc-200" >Isaac Mayné</h1>
+        <h2 class="text-xl font-thin text-center md:text-left dark:text-indigo-500">Desarrollador Fullstack</h2>
+        <p class="dark:text-zinc-200">Técnico superior en desarrollo de aplicaciones web, con más de {años_de_experiencia} de experiencia.</p>
         <div class="mt-4 flex items-center justify-center md:justify-start">
             <Social platform="github" username="sakimay" className="mr-2">
-                <GithubIcon />
+                <GithubIcon className="dark:fill-indigo-500"/>
             </Social>
             <Social platform="linkedin" usernameF="in/isaac-mayne-perez">
-                <LinkedinIcon />
+                <LinkedinIcon className="dark:fill-indigo-500"/>
             </Social>
         </div>
     </div>
