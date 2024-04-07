@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+
+const images = [
+    {
+        src: "/src/assets/knowledge_icons/Astro_dark.svg",
+        name: "Astro",
+        alt: "astro icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/html5.svg",
+        name: "html5",
+        alt: "html5 icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/css.svg",
+        name: "Astro",
+        alt: "css3 icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/javascript.svg",
+        name: "Astro",
+        alt: "javascript icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/react.svg",
+        name: "Astro",
+        alt: "react icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/nodejs.svg",
+        name: "Astro",
+        alt: "node icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/firebase.svg",
+        name: "Astro",
+        alt: "firebase icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/git.svg",
+        name: "Astro",
+        alt: "git icon",
+    },
+    {
+        src: "/src/assets/knowledge_icons/mysql.svg",
+        name: "Astro",
+        alt: "mysql icon",
+    },
+];
+---
+
+<article class="py-6 my-6">
+    <h3 class="text-2xl mb-4">Conocimientos</h3>
+    <div class="flex flex-wrap justify-start items-center">
+        {
+            images.map((image) => (
+                <div class="card flex flex-col flex-1 justify-center items-center m-4">
+                    <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width="30"
+                        height="30"
+                        class:list={"flex-1 "}
+                    />
+                    <p>{image.name}</p>
+                </div>
+            ))
+        }
+    </div>
+</article>
