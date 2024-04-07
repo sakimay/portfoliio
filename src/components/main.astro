@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import myImage from "../assets/isaac_avatar.jpg";
 import Social from "./social.astro";
 import GithubIcon from "../icons/github.astro";
@@ -12,7 +12,7 @@ let años_de_experiencia = current_year - initial_year;
 ---
 <section class="flex flex-col justify-center md:flex-row items-center py-10">
     <div>
-        <Image src={myImage} alt="saki avatar" width={180} height={180} class='rounded-full'/>
+        <Picture src={myImage} formats={['webp','jpg','png']} alt="saki avatar" width={180} height={180} class='rounded-full'/>
     </div>
     <div class="flex flex-col justify-center pt-6 md:pl-6">
         <h1 class="text-4xl text-center md:text-left text-zinc-200" >Isaac Mayné</h1>
