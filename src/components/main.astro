@@ -10,7 +10,7 @@ let current_year = new Date().getFullYear();
 let años_de_experiencia = current_year - initial_year;
 
 ---
-<section class="flex flex-col justify-center md:flex-row items-center py-10">
+<section class="flex flex-col justify-center md:flex-row items-center py-10 min-h-screen">
     <div>
         <Picture src={myImage} formats={['webp','jpg','png']} alt="saki avatar" width={180} height={180} class='rounded-full'/>
     </div>
@@ -20,10 +20,10 @@ let años_de_experiencia = current_year - initial_year;
         <p class="dark:text-zinc-200">Técnico superior en desarrollo de aplicaciones web, con más de {años_de_experiencia} de experiencia.</p>
         <div class="mt-4 flex items-center justify-center md:justify-start">
             <Social platform="github" username="sakimay" className="mr-2">
-                <GithubIcon className="dark:fill-indigo-500"/>
+                <GithubIcon className="dark:fill-indigo-300"/>
             </Social>
             <Social platform="linkedin" usernameF="in/isaac-mayne-perez">
-                <LinkedinIcon className="dark:fill-indigo-500"/>
+                <LinkedinIcon className="dark:fill-indigo-300"/>
             </Social>
         </div>
     </div>

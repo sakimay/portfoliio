@@ -1,10 +1,82 @@
-<div>
-  <h3 class="text-2xl mb-4">Experiencia</h3>
-  <div class="mb-4">
-    <div>
-      <h4 class="text-xl mb-4">2022 - Presente</h4>
-      <h4 class="text-xl mb-4">Freelance</h4>
-      <p>Desarrollador Web Fullstack</p>
+---
+const experiencias = [
+  {
+    fecha: "2022 - Presente",
+    puesto: "Desarrollador web Fullstack",
+    empresa: "Depatro SL (Hockerty/Sumissura)",
+    descripcion: "Descripción del puesto como desarrollador web",
+  },
+  {
+    fecha: "2021 - 2022",
+    puesto: "Desarrollador web Fullstack",
+    empresa: "PMFarma",
+    descripcion: "Descripción del puesto como desarrollador web",
+  },
+  {
+    fecha: "2020 - 2021",
+    puesto: "Desarrollador web Fullstack",
+    empresa: "Rica Design",
+    descripcion: "Descripción del puesto como desarrollador web",
+  },
+  {
+    fecha: "ene. 2020 - may. 2020",
+    puesto: "Desarrollador web en prácticas",
+    empresa: "Rica Design",
+    descripcion: "Descripción del puesto como desarrollador web",
+  },
+  {
+    fecha: "sept. 2020 - sept. 2021",
+    puesto: "Técnico de soporte informático",
+    empresa: "Maristes Sants-Les Corts",
+    descripcion: "Descripción del puesto como desarrollador web",
+  },
+  {
+    fecha: "2013 - 2021",
+    puesto: "Profesor de natación",
+    empresa: "Maristes Sants-Les Corts",
+    descripcion: "Descripción del puesto como desarrollador web",
+  },
+];
+---
+
+<section class="py-6 my-6">
+  <h3 class="text-2xl mb-6">Experiencia Laboral</h3>
+  <div class="line py-6">
+    <div class="mb-4">
+      {
+        experiencias.map((experiencia) => (
+          <article class="flex flex-row mb-8">
+            <div class="point"></div>
+            <div class="flex flex-row w-full">
+              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 max-w-32">{experiencia.fecha}</h4>
+              <div class="flex-1 w-full">
+                <h4 class="text-xl mb-2">{experiencia.puesto}</h4>
+                <p>{experiencia.empresa}</p>
+                <p>{experiencia.descripcion}</p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
-</div>
+</section>
+<style >
+  .line {
+    border-left: 2px solid rgba(58, 119, 168, 0.3);
+    padding-left: 1rem;
+  }
+  article {
+    position: relative;
+  }
+  .point {
+    width: 10px;
+    height: 10px;
+    background-color: #3a77a8;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: absolute;
+    left: -22px;
+    top: 10px;
+  }
+</style>
