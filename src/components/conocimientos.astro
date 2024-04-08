@@ -2,76 +2,118 @@
 import { Image } from "astro:assets";
 
 const images = [
-   
     {
         src: "/src/assets/knowledge_icons/html5.svg",
         name: "HTML5",
         alt: "html5 icon",
+        class: "",
     },
     {
         src: "/src/assets/knowledge_icons/css.svg",
         name: "CSS",
         alt: "css3 icon",
-    },
-    {
-        src: "/src/assets/knowledge_icons/javascript.svg",
-        name: "Javascript",
-        alt: "javascript icon",
+        class: "",
     },
     {
         src: "/src/assets/knowledge_icons/php_dark.svg",
         name: "PHP",
         alt: "php icon",
+        class: "hidden dark:block",
     },
     {
-        src: "/src/assets/knowledge_icons/react.svg",
-        name: "React",
-        alt: "react icon",
+        src: "/src/assets/knowledge_icons/php_light.svg",
+        name: "PHP",
+        alt: "php icon",
+        class: "block dark:hidden",
     },
     {
-        src: "/src/assets/knowledge_icons/nodejs.svg",
-        name: "Nodejs",
-        alt: "node icon",
-    },
-    {
-        src: "/src/assets/knowledge_icons/firebase.svg",
-        name: "Firebase",
-        alt: "firebase icon",
-    },
-    {
-        src: "/src/assets/knowledge_icons/git.svg",
-        name: "Git",
-        alt: "git icon",
+        src: "/src/assets/knowledge_icons/javascript.svg",
+        name: "Javascript",
+        alt: "javascript icon",
+        class: "",
+
     },
     {
         src: "/src/assets/knowledge_icons/mysql.svg",
         name: "Mysql",
         alt: "mysql icon",
+        class: "",
     },
     {
-        src: "/src/assets/knowledge_icons/Astro_dark.svg",
+        src: "/src/assets/knowledge_icons/git.svg",
+        name: "Git",
+        alt: "git icon",
+        class: "",
+    },
+    {
+        src: "/src/assets/knowledge_icons/vue.svg",
+        name: "Vue",
+        alt: "vue icon",
+        class: "",
+    },
+    {
+        src: "/src/assets/knowledge_icons/react.svg",
+        name: "React",
+        alt: "react icon",
+        class: "",
+    },
+    {
+        src: "/src/assets/knowledge_icons/nextjs_dark.svg",
+        name: "Nextjs",
+        alt: "react icon",
+        class: "hidden dark:block",
+    },
+    {
+        src: "/src/assets/knowledge_icons/nextjs_light.svg",
+        name: "Nextjs",
+        alt: "react icon",
+        class: "block dark:hidden",
+    },
+    {
+        src: "/src/assets/knowledge_icons/nodejs.svg",
+        name: "Nodejs",
+        alt: "node icon",
+        class: "",
+    },
+    {
+        src: "/src/assets/knowledge_icons/firebase.svg",
+        name: "Firebase",
+        alt: "firebase icon",
+        class: "",
+    },
+    {
+        src: "/src/assets/knowledge_icons/astro_dark.svg",
         name: "Astro",
         alt: "astro icon",
+        class: "hidden dark:block",
+    },
+    {
+        src: "/src/assets/knowledge_icons/astro_light.svg",
+        name: "Astro",
+        alt: "astro icon",
+        class: "block dark:hidden",
     },
 ];
 ---
 
-<article class="py-6 my-6">
+<article class="p-6 my-6 bg-indigo-100 dark:bg-indigo-950 rounded-md">
     <h3 class="text-2xl mb-4">Conocimientos</h3>
     <div class="flex flex-wrap justify-start items-center">
         {
             images.map((image) => (
-                <div class="card flex flex-col flex-1 justify-center items-center m-4">
-                    <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width="30"
-                        height="30"
-                        class:list={"flex-1 "}
-                    />
-                    <p>{image.name}</p>
+                <div class="card m-4 flex flex-col flex-auto min-w-12 md:min-w-20 lg:min-w-12" class:list={image.class}>
+                    <div class="h-12 flex flex-col items-center justify-center">
+                        <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width="30"
+                            height="30"
+                        />
+                    </div>
+                    <p class="mt-auto text-center">{image.name}</p>
                 </div>
             ))
         }
     </div>
 </article>
+
