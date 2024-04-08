@@ -13,6 +13,11 @@ const navItems = [
     url: "/#proyectos",
   },
   {
+    title: "Conocimientos",
+    label: "conocimientos",
+    url: "/#conocimientos",
+  },
+  {
     title: "Sobre mí",
     label: "sobre-mi",
     url: "/#sobre-mi",
@@ -34,7 +39,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-400"
+          class="relative block px-2 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-500"
           aria-label={link.label}
           href={link.url}
         >
@@ -55,10 +60,11 @@ const navItems = [
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
+            console.log(item);
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add("text-indigo-400")
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove("text-indigo-400")
             }
           })
         }
@@ -97,7 +103,7 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur bg-white/20 dark:bg-gray-950/50 ring-white/10;
     }
   }
 </style>
