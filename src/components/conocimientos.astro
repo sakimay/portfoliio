@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import html5 from '/src/assets/knowledge_icons/html5.svg';
 import css from '/src/assets/knowledge_icons/css.svg';
-import php from '/src/assets/knowledge_icons/php.svg';
+import php_dark from '/src/assets/knowledge_icons/php_dark.svg';
+import php_light from '/src/assets/knowledge_icons/php_light.svg';
 import javascript from '/src/assets/knowledge_icons/javascript.svg';
 import mysql from '/src/assets/knowledge_icons/mysql.svg';
 import git from '/src/assets/knowledge_icons/git.svg';
@@ -14,6 +14,7 @@ import nodejs from '/src/assets/knowledge_icons/nodejs.svg';
 import firebase from '/src/assets/knowledge_icons/firebase.svg';
 import astro_dark from '/src/assets/knowledge_icons/astro_dark.svg';
 import astro_light from '/src/assets/knowledge_icons/astro_light.svg'
+import { Image } from 'astro:assets';
 
 
 const images = [
@@ -30,13 +31,13 @@ const images = [
         class: "",
     },
     {
-        src: php,
+        src: php_dark,
         name: "PHP",
         alt: "php icon",
         class: "hidden dark:block",
     },
     {
-        src: php,
+        src: php_light,
         name: "PHP",
         alt: "php icon",
         class: "block dark:hidden",
