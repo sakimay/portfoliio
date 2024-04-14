@@ -1,7 +1,9 @@
 ---
-import ThemeToggle from './themeIcon.astro';
+import ThemeToggle from "./themeIcon.astro";
+//si estamnos en la pagina 404 cambiamos lo items del nav
 
-const navItems = [
+const pagePathname = Astro.url.pathname;
+let navItems = [
   {
     title: "Experiencia",
     label: "experiencia",
@@ -27,7 +29,7 @@ const navItems = [
     label: "contacto",
     url: "mailto:mayne.isaac@gmail.com",
   },
-]
+];
 ---
 
 <header
@@ -53,45 +55,44 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            console.log(item);
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-indigo-400")
+              item.classList.add("text-indigo-400");
             } else {
-              item.classList.remove("text-indigo-400")
+              item.classList.remove("text-indigo-400");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>
