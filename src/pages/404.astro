@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import sakiavtar from "./src/assets/saki_avatar.png";
+import sakiavatar from "../assets/saki_avatar.png";
 import "../styles/global.css";
 
 ---
@@ -15,7 +15,7 @@ bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.5),rgba(255,2
     >
     </div>
     <div class="mx-auto">
-        <Image src={sakiavtar} alt="saki avatar" width="200" class="mx-auto" />
+        <Image src={sakiavatar} alt="saki avatar" width="200" class="mx-auto" />
         <div>
             
             <h1 class="text-center text-4xl">404 Page not found</h1>
