@@ -1,135 +1,32 @@
 ---
-import html5 from '/src/assets/knowledge_icons/html5.svg';
-import css from '/src/assets/knowledge_icons/css.svg';
-import php_dark from '/src/assets/knowledge_icons/php_dark.svg';
-import php_light from '/src/assets/knowledge_icons/php_light.svg';
-import javascript from '/src/assets/knowledge_icons/javascript.svg';
-import mysql from '/src/assets/knowledge_icons/mysql.svg';
-import git from '/src/assets/knowledge_icons/git.svg';
-import vue from '/src/assets/knowledge_icons/vue.svg';
-import react from '/src/assets/knowledge_icons/react.svg';
-import nextjs_dark from '/src/assets/knowledge_icons/nextjs_dark.svg';
-import nextjs_light from '/src/assets/knowledge_icons/nextjs_light.svg';
-import nodejs from '/src/assets/knowledge_icons/nodejs.svg';
-import firebase from '/src/assets/knowledge_icons/firebase.svg';
-import astro_dark from '/src/assets/knowledge_icons/astro_dark.svg';
-import astro_light from '/src/assets/knowledge_icons/astro_light.svg'
-import { Image } from 'astro:assets';
-
-
-const images = [
-    {
-        src: html5,
-        name: "HTML5",
-        alt: "html5 icon",
-        class: "",
-    },
-    {
-        src: css,
-        name: "CSS",
-        alt: "css3 icon",
-        class: "",
-    },
-    {
-        src: php_dark,
-        name: "PHP",
-        alt: "php icon",
-        class: "hidden dark:block",
-    },
-    {
-        src: php_light,
-        name: "PHP",
-        alt: "php icon",
-        class: "block dark:hidden",
-    },
-    {
-        src: javascript,
-        name: "Javascript",
-        alt: "javascript icon",
-        class: "",
-
-    },
-    {
-        src: mysql,
-        name: "Mysql",
-        alt: "mysql icon",
-        class: "",
-    },
-    {
-        src: git,
-        name: "Git",
-        alt: "git icon",
-        class: "",
-    },
-    {
-        src: vue,
-        name: "Vue",
-        alt: "vue icon",
-        class: "",
-    },
-    {
-        src: react,
-        name: "React",
-        alt: "react icon",
-        class: "",
-    },
-    {
-        src: nextjs_dark,
-        name: "Nextjs",
-        alt: "react icon",
-        class: "hidden dark:block",
-    },
-    {
-        src: nextjs_light,
-        name: "Nextjs",
-        alt: "react icon",
-        class: "block dark:hidden",
-    },
-    {
-        src: nodejs,
-        name: "Nodejs",
-        alt: "node icon",
-        class: "",
-    },
-    {
-        src: firebase,
-        name: "Firebase",
-        alt: "firebase icon",
-        class: "",
-    },
-    {
-        src: astro_dark,
-        name: "Astro",
-        alt: "astro icon",
-        class: "hidden dark:block",
-    },
-    {
-        src: astro_light,
-        name: "Astro",
-        alt: "astro icon",
-        class: "block dark:hidden",
-    },
-];
+const components = await Astro.glob(
+    "../components/icons/knowledge_icons/*.astro",
+);
 ---
 
-<article class="p-6 my-6 bg-indigo-100 dark:bg-indigo-950 rounded-md" id="conocimientos">
+<article
+    class="p-6 my-6 bg-indigo-100 dark:bg-indigo-950 rounded-md"
+    id="conocimientos"
+>
     <h3 class="text-2xl mb-4">Conocimientos</h3>
     <div class="flex flex-wrap justify-start items-center">
         {
-            images.map((image) => (
-                <div class="card m-4 flex flex-col flex-auto min-w-12 md:min-w-20 lg:min-w-12" class:list={image.class}>
-                    <div class="h-12 flex flex-col items-center justify-center">
-                        <Image
-                            src={image.src}
-                            alt={image.alt}
-                            width="30"
-                            height="30"
-                        />
-                    </div>
-                    <p class="mt-auto text-center">{image.name}</p>
+            components.map((component) => (
+                <div
+                    class={`card flex-col flex-1 justify-center items-center m-4 ${component.default.name.includes("_dark") ? "hidden dark:flex" : component.default.name.includes("_light") ? "flex dark:hidden" : "flex"}`}
+                >
+                    <component.default />
+                    <p class="text-sm">
+                        {component.default.name.split("_")[0]}
+                    </p>
                 </div>
             ))
         }
     </div>
 </article>
-
+<style is:inline>
+    #conocimientos svg {
+        width: 25px;
+        height: auto;
+    }
+</style>

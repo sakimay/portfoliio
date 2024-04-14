@@ -60,7 +60,6 @@ const navItems = [
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            console.log(item);
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add("text-indigo-400")
             } else {
