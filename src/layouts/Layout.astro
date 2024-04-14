@@ -3,7 +3,7 @@ import "@fontsource/lato";
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import { ViewTransitions } from "astro:transitions"
-import global_css from "../styles/global.css";
+import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
@@ -19,7 +19,6 @@ const { description, title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <style is:inline set:html={global_css}></style>
     <title>{title}</title>
     <ViewTransitions />
   </head>
