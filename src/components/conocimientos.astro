@@ -9,13 +9,13 @@ const components = await Astro.glob(
     id="conocimientos"
 >
     <h3 class="text-2xl mb-4">Conocimientos</h3>
-    <div class="flex flex-wrap justify-start items-center">
+    <div class="grid-conocimientos">
         {
             components.map((component) => (
                 <div
-                    class={`card flex-col flex-1 justify-center items-center m-4 ${component.default.name.includes("_dark") ? "hidden dark:flex" : component.default.name.includes("_light") ? "flex dark:hidden" : "flex"}`}
+                    class={`card flex-col flex-1 justify-between items-center m-4 ${component.default.name.includes("_dark") ? "hidden dark:flex" : component.default.name.includes("_light") ? "flex dark:hidden" : "flex"}`}
                 >
-                    <component.default />
+                    <div class="flex flex-col items-center justify-center m-auto"><component.default/></div>
                     <p class="text-sm">
                         {component.default.name.split("_")[0]}
                     </p>
@@ -27,6 +27,14 @@ const components = await Astro.glob(
 <style is:inline>
     #conocimientos svg {
         width: 25px;
-        height: auto;
+        height: 100%;
+    }
+    #conocimientos .card {
+        min-height: 60px;
+    }
+    #conocimientos .grid-conocimientos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 1rem;
     }
 </style>
