@@ -5,38 +5,95 @@ const experiencias = [
     puesto: "Desarrollador web Fullstack",
     empresa: "Depatro SL (Hockerty/Sumissura)",
     descripcion: "Descripción del puesto como desarrollador web",
+    tecnologias: [
+      "php_light",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "sentry",
+    ],
   },
   {
     fecha: "2021 - 2022",
     puesto: "Desarrollador web Fullstack",
     empresa: "PMFarma",
     descripcion: "Descripción del puesto como desarrollador web",
+    tecnologias: [
+      "php",
+      "vue",
+      "javascript",
+      "html5",
+      "css",
+      "git",
+    ],
   },
   {
     fecha: "2020 - 2021",
     puesto: "Desarrollador web Fullstack",
     empresa: "Rica Design",
     descripcion: "Descripción del puesto como desarrollador web",
+    tecnologias: [
+      "php_light",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "sentry",
+    ],
   },
   {
     fecha: "ene. 2020 - may. 2020",
     puesto: "Desarrollador web en prácticas",
     empresa: "Rica Design",
     descripcion: "Descripción del puesto como desarrollador web",
+    tecnologias: [
+      "php_light",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "sentry",
+    ],
   },
   {
     fecha: "sept. 2020 - sept. 2021",
     puesto: "Técnico de soporte informático",
     empresa: "Maristes Sants-Les Corts",
     descripcion: "Descripción del puesto como desarrollador web",
+    tecnologias: [
+      "php_light",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "sentry",
+    ],
   },
   {
     fecha: "2013 - 2021",
     puesto: "Profesor de natación",
     empresa: "Maristes Sants-Les Corts",
     descripcion: "Descripción del puesto como desarrollador web",
+    tecnologias: [
+      "php_light",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "sentry",
+    ],
   },
 ];
+
+const components = await Astro.glob(
+  "../components/icons/knowledge_icons/*.astro",
+);
 ---
 
 <section class="py-6 my-6" id="experiencia">
@@ -46,13 +103,26 @@ const experiencias = [
       {
         experiencias.map((experiencia) => (
           <article class="flex flex-row mb-8">
-            <div class="point"></div>
+            <div class="point" />
             <div class="flex flex-row w-full">
-              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 max-w-32 md:max-w-xs">{experiencia.fecha}</h4>
+              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 max-w-32 md:max-w-xs">
+                {experiencia.fecha}
+              </h4>
               <div class="flex-1 w-full">
                 <h4 class="text-xl mb-2">{experiencia.puesto}</h4>
                 <p>{experiencia.empresa}</p>
                 <p>{experiencia.descripcion}</p>
+                <div class="grid-conocimientos">
+                  {components.map((component) =>
+                    experiencia.tecnologias.includes(component.default.name.split("_")[0]) && (
+                     
+                        <div>
+                          <component.default />
+                        </div>
+                      
+                    )
+                  )}
+                </div>
               </div>
             </div>
           </article>
@@ -78,5 +148,16 @@ const experiencias = [
     position: absolute;
     left: -22px;
     top: 10px;
+  }
+  svg {
+    width: 25px;
+    height: 100%;
+  }
+
+  #experiencia .grid-conocimientos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    gap: 1rem;
+    margin: 10px 0;
   }
 </style>
