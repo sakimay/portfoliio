@@ -3,8 +3,15 @@ const experiencias = [
   {
     fecha: "2022 - Presente",
     puesto: "Desarrollador web Fullstack",
-    empresa: "Depatro SL (Hockerty/Sumissura)",
-    descripcion: "Descripción del puesto como desarrollador web",
+    empresa: "Depatro SL (Hockerty/Sumissura) - Sant Cugat del Vallés",
+    descripcion: [
+      "Desarrollo y mantenimiento de aplicaciones web utilizando un framework propio basado en PHP.",
+      "Implementación de soluciones de frontend utilizando Smarty, JavaScript y jQuery para mejorar la experiencia del usuario.",
+      "Diseño y optimización de bases de datos MySQL para garantizar un rendimiento eficiente y escalabilidad.",
+      "Refactorización de código existente para mejorar la legibilidad, rendimiento y mantenibilidad del software.",
+      "Colaboración en un equipo ágil, participando en revisiones de código y aportando mejoras continuas al proceso de desarrollo.",
+      "Integración de servicios de AWS, como S3 y CloudFront, para optimizar el almacenamiento y la distribución de contenido."
+    ],
     tecnologias: [
       "php_light",
       "javascript",
@@ -18,22 +25,15 @@ const experiencias = [
   {
     fecha: "2021 - 2022",
     puesto: "Desarrollador web Fullstack",
-    empresa: "PMFarma",
-    descripcion: "Descripción del puesto como desarrollador web",
-    tecnologias: [
-      "php",
-      "vue",
-      "javascript",
-      "html5",
-      "css",
-      "git",
-    ],
+    empresa: "PMFarma - Barcelona",
+    descripcion: ["Descripción del puesto como desarrollador web"],
+    tecnologias: ["php", "vue", "javascript", "html5", "css", "git"],
   },
   {
     fecha: "2020 - 2021",
     puesto: "Desarrollador web Fullstack",
     empresa: "Rica Design",
-    descripcion: "Descripción del puesto como desarrollador web",
+    descripcion: ["Descripción del puesto como desarrollador web"],
     tecnologias: [
       "php_light",
       "javascript",
@@ -48,7 +48,7 @@ const experiencias = [
     fecha: "ene. 2020 - may. 2020",
     puesto: "Desarrollador web en prácticas",
     empresa: "Rica Design",
-    descripcion: "Descripción del puesto como desarrollador web",
+    descripcion: ["Descripción del puesto como desarrollador web"],
     tecnologias: [
       "php_light",
       "javascript",
@@ -63,7 +63,7 @@ const experiencias = [
     fecha: "sept. 2020 - sept. 2021",
     puesto: "Técnico de soporte informático",
     empresa: "Maristes Sants-Les Corts",
-    descripcion: "Descripción del puesto como desarrollador web",
+    descripcion: ["Descripción del puesto como desarrollador web"],
     tecnologias: [
       "php_light",
       "javascript",
@@ -78,7 +78,7 @@ const experiencias = [
     fecha: "2013 - 2021",
     puesto: "Profesor de natación",
     empresa: "Maristes Sants-Les Corts",
-    descripcion: "Descripción del puesto como desarrollador web",
+    descripcion: ["Descripción del puesto como desarrollador web"],
     tecnologias: [
       "php_light",
       "javascript",
@@ -110,17 +110,24 @@ const components = await Astro.glob(
               </h4>
               <div class="flex-1 w-full">
                 <h4 class="text-xl mb-2">{experiencia.puesto}</h4>
-                <p>{experiencia.empresa}</p>
-                <p>{experiencia.descripcion}</p>
+                <p>
+                  <i>{experiencia.empresa}</i>
+                </p>
+                <ul>
+                  {experiencia.descripcion.map((desc) => (
+                    <li>{desc}</li>
+                  ))}
+                </ul>
                 <div class="grid-conocimientos">
-                  {components.map((component) =>
-                    experiencia.tecnologias.includes(component.default.name.split("_")[0]) && (
-                     
+                  {components.map(
+                    (component) =>
+                      experiencia.tecnologias.includes(
+                        component.default.name.split("_")[0],
+                      ) && (
                         <div>
                           <component.default />
                         </div>
-                      
-                    )
+                      ),
                   )}
                 </div>
               </div>
@@ -131,7 +138,7 @@ const components = await Astro.glob(
     </div>
   </div>
 </section>
-<style >
+<style>
   .line {
     border-left: 2px solid rgba(58, 119, 168, 0.3);
     padding-left: 1rem;
@@ -159,5 +166,13 @@ const components = await Astro.glob(
     grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
     gap: 1rem;
     margin: 10px 0;
+  }
+  #experiencia ul {
+    list-style: disc !important;
+    padding-left: 1.5rem;
+    margin: 10px 0;
+  }
+  #experiencia ul li {
+    display: list-item;
   }
 </style>
