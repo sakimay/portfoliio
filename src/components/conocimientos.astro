@@ -13,11 +13,11 @@ const components = await Astro.glob(
         {
             components.map((component) => (
                 <div
-                    class={`card flex-col flex-1 justify-between items-center m-4 ${component.default.name.includes("_dark") ? "hidden dark:flex" : component.default.name.includes("_light") ? "flex dark:hidden" : "flex"}`}
+                    class="card flex flex-col flex-1 justify-between items-center m-4"
                 >
                     <div class="flex flex-col items-center justify-center m-auto"><component.default/></div>
                     <p class="text-sm">
-                        {component.default.name.split("_")[0]}
+                        {component.default.name}
                     </p>
                 </div>
             ))

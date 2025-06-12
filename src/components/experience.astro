@@ -13,7 +13,7 @@ const experiencias = [
       "Integración de servicios de AWS, como S3 y CloudFront, para optimizar el almacenamiento y la distribución de contenido."
     ],
     tecnologias: [
-      "php_light",
+      "php",
       "javascript",
       "mysql",
       "html5",
@@ -23,7 +23,7 @@ const experiencias = [
     ],
   },
   {
-    fecha: "2021 - 2022",
+    fecha: "2022 - 2022",
     puesto: "Desarrollador web Fullstack",
     empresa: "PMFarma - Barcelona",
     descripcion: [
@@ -32,13 +32,39 @@ const experiencias = [
       "Realización de pruebas automatizadas con Cypress, mejorando la cobertura de pruebas y la fiabilidad del software.",
       "Colaboración estrecha con equipos multidisciplinarios para optimizar el flujo de trabajo y resolver problemas técnicos de manera efectiva.",
     ],
-    tecnologias: ["php", "vue", "javascript", "html5", "css", "git"],
+    tecnologias: [
+      "quasar",
+      "php", 
+      "vue", 
+      "javascript", 
+      "html5", 
+      "css", 
+      "git",
+      "cypress"
+    ],
   },
   {
-    fecha: "2020 - 2021",
+    fecha: "2020 - 2022",
     puesto: "Desarrollador web Fullstack",
-    empresa: "Rica Design",
-    descripcion: ["Descripción del puesto como desarrollador web"],
+    empresa: "Rica Design - Barcelona",
+    descripcion: ["Desarrollo de sitios web a medida para diversas empresas, utilizando Laravel en el backend y Vue JS en el frontend, adaptando soluciones a las necesidades específicas de cada cliente."],
+    tecnologias: [
+    "laravel",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "tailwindcss"
+    ],
+  },
+  {
+    fecha: "ene. 2020 - may. 2020",
+    puesto: "Desarrollador web en prácticas",
+    empresa: "Rica Design - Barcelona",
+    descripcion: [
+      "Desarrollo de sitios web a medida para diversas empresas, utilizando Laravel en el backend y Vue JS en el frontend, adaptando soluciones a las necesidades específicas de cada cliente.",
+    ],
     tecnologias: [
       "laravel",
       "javascript",
@@ -46,56 +72,19 @@ const experiencias = [
       "html5",
       "css",
       "git",
-      "sentry",
-    ],
-  },
-  {
-    fecha: "ene. 2020 - may. 2020",
-    puesto: "Desarrollador web en prácticas",
-    empresa: "Rica Design",
-    descripcion: [
-      "Desarrollo de sitios web a medida para diversas empresas, utilizando Laravel en el backend y Vue JS en el frontend, adaptando soluciones a las necesidades específicas de cada cliente.",
-    ],
-    tecnologias: [
-      "php_light",
-      "javascript",
-      "mysql",
-      "html5",
-      "css",
-      "git",
-      "sentry",
+      "tailwindcss"
     ],
   },
   {
     fecha: "sept. 2020 - sept. 2021",
     puesto: "Técnico de soporte informático",
     empresa: "Maristes Sants-Les Corts",
-    descripcion: ["Descripción del puesto como desarrollador web"],
+    descripcion: [],
     tecnologias: [
-      "php_light",
-      "javascript",
-      "mysql",
-      "html5",
-      "css",
-      "git",
-      "sentry",
+      
     ],
   },
-  {
-    fecha: "2013 - 2021",
-    puesto: "Profesor de natación",
-    empresa: "Maristes Sants-Les Corts",
-    descripcion: ["Descripción del puesto como desarrollador web"],
-    tecnologias: [
-      "php_light",
-      "javascript",
-      "mysql",
-      "html5",
-      "css",
-      "git",
-      "sentry",
-    ],
-  },
+  
 ];
 
 const components = await Astro.glob(
@@ -120,16 +109,18 @@ const components = await Astro.glob(
                 <p>
                   <i>{experiencia.empresa}</i>
                 </p>
-                <ul>
-                  {experiencia.descripcion.map((desc) => (
-                    <li>{desc}</li>
-                  ))}
-                </ul>
+                {experiencia.descripcion && experiencia.descripcion[0] !== "" &&
+                  <ul>
+                    {experiencia.descripcion.map((desc) => (
+                      <li>{desc}</li>
+                    ))}
+                  </ul>
+                }
                 <div class="grid-conocimientos">
                   {components.map(
                     (component) =>
                       experiencia.tecnologias.includes(
-                        component.default.name.split("_")[0],
+                        component.default.name,
                       ) && (
                         <div>
                           <component.default />
