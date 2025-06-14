@@ -1,7 +1,28 @@
 ---
 const experiencias = [
   {
-    fecha: "2022 - Presente",
+    fecha: "Mar. 2025 - Presente",
+    puesto: "Desarrollador web Fullstack en Global Planing Solutions",
+    empresa: "Barcelona",
+    descripcion: [
+      "Desarrollo de aplicaciones web utilizando Vue JS y Node.js, asegurando una arquitectura moderna y escalable.",
+      "Implementación de pruebas unitarias y de integración con Mocha para garantizar la calidad del código y la fiabilidad de las aplicaciones.",
+      "Desarrollo de aplicaciones móviles nativas en Swift y Java, adaptando soluciones a las necesidades específicas de cada cliente.",
+      "Colaboración en un equipo ágil, participando en revisiones de código y aportando mejoras continuas al proceso de desarrollo.",
+      "Integración de Capacitor para crear aplicaciones híbridas, permitiendo el despliegue en múltiples plataformas con un único código base.",
+    ],
+    tecnologias: [
+      "vue",
+      "javascript",
+      "nodejs",
+      "html5",
+      "css",
+      "git",
+      "mocha",
+    ],
+  },
+  {
+    fecha: "Feb. 2022 - Mar. 2025",
     puesto: "Desarrollador web Fullstack en Depatro SL",
     empresa: "(Hockerty/Sumissura) - Sant Cugat del Vallés",
     descripcion: [
@@ -23,7 +44,7 @@ const experiencias = [
     ],
   },
   {
-    fecha: "2022 - 2022",
+    fecha: "Sept. 2022 - Feb. 2022",
     puesto: "Desarrollador web Fullstack en PMFarma",
     empresa: "Barcelona",
     descripcion: [
@@ -44,7 +65,7 @@ const experiencias = [
     ],
   },
   {
-    fecha: "2020 - 2022",
+    fecha: "Ene. 2020 - Sept. 2022",
     puesto: "Desarrollador web Fullstack en Rica Design",
     empresa: "Barcelona",
     descripcion: [
@@ -62,13 +83,26 @@ const experiencias = [
     ],
   },
   {
-    fecha: "sept. 2020 - sept. 2021",
+    fecha: "Sept. 2020 - Sept. 2021",
     puesto: "Técnico de soporte informático",
     empresa: "Maristes Sants-Les Corts",
-    descripcion: [],
-    tecnologias: [
-      
+    descripcion: [
+      "Soporte técnico a usuarios de la comunidad educativa, resolviendo incidencias relacionadas con hardware y software.",
+      "Mantenimiento y actualización de equipos informáticos, asegurando un entorno tecnológico eficiente y funcional.",
+      "Colaboración en la implementación de nuevas tecnologías y herramientas digitales para mejorar la experiencia educativa."
     ],
+    tecnologias: [],
+  },
+  {
+    fecha: "2008 - 2021",
+    puesto: "Monitor de natación",
+    empresa: "Maristes Sants-Les Corts",
+    descripcion: [
+      "Enseñanza de natación a niños y adultos, adaptando las clases a diferentes niveles y necesidades.",
+      "Organización de actividades acuáticas y eventos deportivos, fomentando la participación y el trabajo en equipo.",
+      "Desarrollo de habilidades de comunicación y liderazgo al interactuar con estudiantes y padres."
+    ],
+    tecnologias: [],
   },
   
 ];
@@ -79,7 +113,7 @@ const components = await Astro.glob(
 ---
 
 <section class="py-6 my-6" id="experiencia">
-  <h3 class="text-2xl mb-6">Experiencia Laboral</h3>
+  <h3 class="text-2xl mb-6 text-indigo-700 font-bold">Experiencia Laboral</h3>
   <div class="line py-6">
     <div class="mb-4">
       {
@@ -87,13 +121,13 @@ const components = await Astro.glob(
           <article class="flex flex-row mb-8">
             <div class="point" />
             <div class="flex flex-row w-full">
-              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 max-w-32 md:max-w-xs">
+              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 text-indigo-500 max-w-32 md:max-w-xs">
                 {experiencia.fecha}
               </h4>
               <div class="flex-1 w-full">
-                <h4 class="text-xl mb-2">{experiencia.puesto}</h4>
+                <h4 class="text-xl mb-2 text-indigo-500">{experiencia.puesto}</h4>
                 <p>
-                  <i>{experiencia.empresa}</i>
+                  <i class="dark:text-indigo-100 text-indigo-400">{experiencia.empresa}</i>
                 </p>
                 {experiencia.descripcion && experiencia.descripcion[0] !== "" &&
                   <ul>

@@ -2,6 +2,27 @@
 const components = await Astro.glob(
     "../components/icons/knowledge_icons/*.astro",
 );
+
+const formacion = [
+    {
+        fecha: "2024",
+        puesto: "Curso de React y TypeScript",
+        empresa: "Udemy",
+        descripcion: ["Hooks y State hasta TypeScript, Zod, Zustand, React Query, Next.js, React Router, MERN y PERN"],
+    },
+    {
+        fecha: "2022",
+        puesto: "Curso de Vue js - Fernando Herrera",
+        empresa: "Udemy",
+        descripcion: ["Pinia, unit test, composition api, autenticación, composables, deployment, file structure, lazy load, vitest y más"],
+    },
+    {
+        fecha: "2016 - 2019",
+        puesto: "Ciclo formativo de grado Superior",
+        empresa: "Linkia FP - Barcelona",
+        descripcion: ["Desarrollo de aplicaciones web"],
+    },
+];
 ---
 
 <article
@@ -9,20 +30,28 @@ const components = await Astro.glob(
     id="formacion"
 >
     <h3 class="text-2xl mb-4">Formación</h3>
-    <div class="grid-conocimientos">
-        {
-            components.map((component) => (
-                <div
-                    class="card flex flex-col flex-1 justify-between items-center m-4"
-                >
-                    <div class="flex flex-col items-center justify-center m-auto"><component.default/></div>
-                    <p class="text-sm">
-                        {component.default.name}
-                    </p>
+    <div class="formacion-list">
+        {formacion.map((item) => (
+            <div class="formacion-card bg-indigo-200 dark:bg-indigo-900 p-4 rounded-md mt-4 shadow-md flex flex-col md:flex-row gap-4">
+                <div class="md:min-w-[27%]">
+                    <p>{item.fecha}</p>
                 </div>
-            ))
-        }
+                <div>
+                    <h4 class="uppercase text-indigo-500 font-bold">{item.puesto}</h4>
+                    <h5 class="text-indigo-600">{item.empresa}</h5>
+                    {item.descripcion && item.descripcion[0] !== "" && (
+                        <ul>
+                            {item.descripcion.map((desc) => (
+                                <li>{desc}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            </div>
+        ))}
+       
     </div>
+    
 </article>
 <style is:inline>
     #conocimientos svg {
