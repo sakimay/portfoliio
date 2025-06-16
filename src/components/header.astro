@@ -5,29 +5,40 @@ import ThemeToggle from "./themeIcon.astro";
 const pagePathname = Astro.url.pathname;
 let navItems = [
   {
+    title: "Inicio",
+    label: "inicio",
+    url: "/#inicio",
+    icon: "home.svg"
+  },
+  {
     title: "Experiencia",
     label: "experiencia",
     url: "/#experiencia",
+    icon: "expreciencia.svg"
   },
-  // {
-  //   title: "Proyectos",
-  //   label: "proyectos",
-  //   url: "/#proyectos",
-  // },
   {
     title: "Formación",
     label: "formacion",
     url: "/#formacion",
+    icon: "formacion.svg"
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos-personales",
+    icon: "proyectos.svg"
   },
   {
     title: "Sobre mí",
     label: "sobre-mi",
     url: "/#sobre-mi",
+    icon: "about_me.svg"
   },
   {
     title: "Contacto",
     label: "contacto",
     url: "mailto:mayne.isaac@gmail.com",
+    icon: "contact.svg"
   },
 ];
 ---
@@ -36,16 +47,17 @@ let navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center py-3 gap-5"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-500"
+          class="relative flex justify-center transition hover:text-indigo-500 dark:hover:text-indigo-500 text-center"
           aria-label={link.label}
           href={link.url}
         >
-          {link.title}
+          <img src={`../src/assets/${link.icon}`} width="24" height="24" alt={link.title} class="block md:hidden"/>
+          <span class="hidden md:block">{link.title}</span>
         </a>
       ))
     }
@@ -104,7 +116,7 @@ let navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-white/20 dark:bg-gray-950/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur bg-gray-600/30 dark:bg-gray-950/50 ring-white/10;
     }
   }
 </style>
