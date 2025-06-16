@@ -3,7 +3,7 @@ const experiencias = [
   {
     fecha: "Mar. 2025 - Presente",
     puesto: "Desarrollador web Fullstack en Global Planing Solutions",
-    empresa: "Barcelona",
+    localidad: "Barcelona",
     descripcion: [
       "Desarrollo de aplicaciones web utilizando Vue JS y Node.js, asegurando una arquitectura moderna y escalable.",
       "Implementación de pruebas unitarias y de integración con Mocha para garantizar la calidad del código y la fiabilidad de las aplicaciones.",
@@ -24,7 +24,7 @@ const experiencias = [
   {
     fecha: "Feb. 2022 - Mar. 2025",
     puesto: "Desarrollador web Fullstack en Depatro SL",
-    empresa: "(Hockerty/Sumissura) - Sant Cugat del Vallés",
+    localidad: "(Hockerty/Sumissura) - Sant Cugat del Vallés",
     descripcion: [
       "Desarrollo y mantenimiento de aplicaciones web utilizando un framework propio basado en PHP.",
       "Implementación de soluciones de frontend utilizando Smarty, JavaScript y jQuery para mejorar la experiencia del usuario.",
@@ -46,7 +46,7 @@ const experiencias = [
   {
     fecha: "Sept. 2022 - Feb. 2022",
     puesto: "Desarrollador web Fullstack en PMFarma",
-    empresa: "Barcelona",
+    localidad: "Barcelona",
     descripcion: [
       "Desarrollo de aplicaciones web con Quasar (Vue JS), asegurando una arquitectura moderna y escalable.",
       "Implementación de pipelines de CI/CD para automatizar el proceso de despliegue y garantizar entregas continuas y de alta calidad.",
@@ -67,7 +67,7 @@ const experiencias = [
   {
     fecha: "Ene. 2020 - Sept. 2022",
     puesto: "Desarrollador web Fullstack en Rica Design",
-    empresa: "Barcelona",
+    localidad: "Barcelona",
     descripcion: [
       "Realizar practicas de empresa del ciclo formativo",
       "Desarrollo de sitios web a medida para empresas, utilizando Laravel en el backend y Vue JS en el frontend, adaptando soluciones a las necesidades específicas de cada cliente."
@@ -85,7 +85,7 @@ const experiencias = [
   {
     fecha: "Sept. 2020 - Sept. 2021",
     puesto: "Técnico de soporte informático",
-    empresa: "Maristes Sants-Les Corts",
+    localidad: "Maristes Sants-Les Corts",
     descripcion: [
       "Soporte técnico a usuarios de la comunidad educativa, resolviendo incidencias relacionadas con hardware y software.",
       "Mantenimiento y actualización de equipos informáticos, asegurando un entorno tecnológico eficiente y funcional.",
@@ -96,7 +96,7 @@ const experiencias = [
   {
     fecha: "2008 - 2021",
     puesto: "Monitor de natación",
-    empresa: "Maristes Sants-Les Corts",
+    localidad: "Maristes Sants-Les Corts",
     descripcion: [
       "Enseñanza de natación a niños y adultos, adaptando las clases a diferentes niveles y necesidades.",
       "Organización de actividades acuáticas y eventos deportivos, fomentando la participación y el trabajo en equipo.",
@@ -120,14 +120,14 @@ const components = await Astro.glob(
         experiencias.map((experiencia) => (
           <article class="flex flex-row mb-8">
             <div class="point" />
-            <div class="flex flex-row w-full">
-              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 text-indigo-500 max-w-32 md:max-w-xs">
+            <div class="flex flex-col w-full md:flex-row">
+              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-700 text-indigo-500 md:max-w-32">
                 {experiencia.fecha}
               </h4>
               <div class="flex-1 w-full">
-                <h4 class="text-xl mb-2 text-indigo-500">{experiencia.puesto}</h4>
+                <h4 class="text-xl mb-2 dark:text-indigo-500 text-indigo-800 font-bold">{experiencia.puesto}</h4>
                 <p>
-                  <i class="dark:text-indigo-100 text-indigo-400">{experiencia.empresa}</i>
+                  <i class="dark:text-indigo-300 text-indigo-400">{experiencia.localidad}</i>
                 </p>
                 {experiencia.descripcion && experiencia.descripcion[0] !== "" &&
                   <ul>
