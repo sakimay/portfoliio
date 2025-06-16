@@ -1,0 +1,69 @@
+---
+const components = await Astro.glob(
+    "../components/icons/knowledge_icons/*.astro",
+);
+
+const formacion = [
+    {
+        fecha: "2024",
+        puesto: "Curso de React y TypeScript",
+        empresa: "Udemy",
+        descripcion: ["Hooks y State hasta TypeScript, Zod, Zustand, React Query, Next.js, React Router, MERN y PERN"],
+    },
+    {
+        fecha: "2022",
+        puesto: "Curso de Vue js - Fernando Herrera",
+        empresa: "Udemy",
+        descripcion: ["Pinia, unit test, composition api, autenticación, composables, deployment, file structure, lazy load, vitest y más"],
+    },
+    {
+        fecha: "2016 - 2019",
+        puesto: "Ciclo formativo de grado Superior",
+        empresa: "Linkia FP - Barcelona",
+        descripcion: ["Desarrollo de aplicaciones web"],
+    },
+];
+---
+
+<article
+    class="p-6 my-6 bg-indigo-100 dark:bg-indigo-950 rounded-md"
+    id="formacion"
+>
+    <h3 class="text-2xl mb-6 text-indigo-700 font-bold">Formación</h3>
+    <div class="formacion-list">
+        {formacion.map((item) => (
+            <div class="formacion-card bg-indigo-200 dark:bg-indigo-900 p-4 rounded-md mt-4 shadow-md flex flex-col md:flex-row gap-4">
+                <div class="md:min-w-[27%]">
+                    <p>{item.fecha}</p>
+                </div>
+                <div>
+                    <h4 class="uppercase text-indigo-500 font-bold">{item.puesto}</h4>
+                    <h5 class="text-indigo-600">{item.empresa}</h5>
+                    {item.descripcion && item.descripcion[0] !== "" && (
+                        <ul>
+                            {item.descripcion.map((desc) => (
+                                <li>{desc}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            </div>
+        ))}
+       
+    </div>
+    
+</article>
+<style is:inline>
+    #conocimientos svg {
+        width: 25px;
+        height: 100%;
+    }
+    #conocimientos .card {
+        min-height: 60px;
+    }
+    #conocimientos .grid-conocimientos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 1rem;
+    }
+</style>

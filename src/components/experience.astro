@@ -1,58 +1,153 @@
 ---
 const experiencias = [
   {
-    fecha: "2022 - Presente",
-    puesto: "Desarrollador web Fullstack",
-    empresa: "Depatro SL (Hockerty/Sumissura)",
-    descripcion: "Descripción del puesto como desarrollador web",
+    fecha: "Mar. 2025 - Presente",
+    puesto: "Desarrollador web Fullstack en Global Planing Solutions",
+    localidad: "Barcelona",
+    descripcion: [
+      "Desarrollo de aplicaciones web utilizando Vue JS y Node.js, asegurando una arquitectura moderna y escalable.",
+      "Implementación de pruebas unitarias y de integración con Mocha para garantizar la calidad del código y la fiabilidad de las aplicaciones.",
+      "Desarrollo de aplicaciones móviles nativas en Swift y Java, adaptando soluciones a las necesidades específicas de cada cliente.",
+      "Colaboración en un equipo ágil, participando en revisiones de código y aportando mejoras continuas al proceso de desarrollo.",
+      "Integración de Capacitor para crear aplicaciones híbridas, permitiendo el despliegue en múltiples plataformas con un único código base.",
+    ],
+    tecnologias: [
+      "vue",
+      "javascript",
+      "nodejs",
+      "html5",
+      "css",
+      "git",
+      "mocha",
+    ],
   },
   {
-    fecha: "2021 - 2022",
-    puesto: "Desarrollador web Fullstack",
-    empresa: "PMFarma",
-    descripcion: "Descripción del puesto como desarrollador web",
+    fecha: "Feb. 2022 - Mar. 2025",
+    puesto: "Desarrollador web Fullstack en Depatro SL",
+    localidad: "(Hockerty/Sumissura) - Sant Cugat del Vallés",
+    descripcion: [
+      "Desarrollo y mantenimiento de aplicaciones web utilizando un framework propio basado en PHP.",
+      "Implementación de soluciones de frontend utilizando Smarty, JavaScript y jQuery para mejorar la experiencia del usuario.",
+      "Diseño y optimización de bases de datos MySQL para garantizar un rendimiento eficiente y escalabilidad.",
+      "Refactorización de código existente para mejorar la legibilidad, rendimiento y mantenibilidad del software.",
+      "Colaboración en un equipo ágil, participando en revisiones de código y aportando mejoras continuas al proceso de desarrollo.",
+      "Integración de servicios de AWS, como S3 y CloudFront, para optimizar el almacenamiento y la distribución de contenido."
+    ],
+    tecnologias: [
+      "php",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "sentry",
+    ],
   },
   {
-    fecha: "2020 - 2021",
-    puesto: "Desarrollador web Fullstack",
-    empresa: "Rica Design",
-    descripcion: "Descripción del puesto como desarrollador web",
+    fecha: "Sept. 2022 - Feb. 2022",
+    puesto: "Desarrollador web Fullstack en PMFarma",
+    localidad: "Barcelona",
+    descripcion: [
+      "Desarrollo de aplicaciones web con Quasar (Vue JS), asegurando una arquitectura moderna y escalable.",
+      "Implementación de pipelines de CI/CD para automatizar el proceso de despliegue y garantizar entregas continuas y de alta calidad.",
+      "Realización de pruebas automatizadas con Cypress, mejorando la cobertura de pruebas y la fiabilidad del software.",
+      "Colaboración estrecha con equipos multidisciplinarios para optimizar el flujo de trabajo y resolver problemas técnicos de manera efectiva.",
+    ],
+    tecnologias: [
+      "quasar",
+      "php", 
+      "vue", 
+      "javascript", 
+      "html5", 
+      "css", 
+      "git",
+      "cypress"
+    ],
   },
   {
-    fecha: "ene. 2020 - may. 2020",
-    puesto: "Desarrollador web en prácticas",
-    empresa: "Rica Design",
-    descripcion: "Descripción del puesto como desarrollador web",
+    fecha: "Ene. 2020 - Sept. 2022",
+    puesto: "Desarrollador web Fullstack en Rica Design",
+    localidad: "Barcelona",
+    descripcion: [
+      "Realizar practicas de empresa del ciclo formativo",
+      "Desarrollo de sitios web a medida para empresas, utilizando Laravel en el backend y Vue JS en el frontend, adaptando soluciones a las necesidades específicas de cada cliente."
+    ],
+    tecnologias: [
+    "laravel",
+      "javascript",
+      "mysql",
+      "html5",
+      "css",
+      "git",
+      "tailwindcss"
+    ],
   },
   {
-    fecha: "sept. 2020 - sept. 2021",
+    fecha: "Sept. 2020 - Sept. 2021",
     puesto: "Técnico de soporte informático",
-    empresa: "Maristes Sants-Les Corts",
-    descripcion: "Descripción del puesto como desarrollador web",
+    localidad: "Maristes Sants-Les Corts",
+    descripcion: [
+      "Soporte técnico a usuarios de la comunidad educativa, resolviendo incidencias relacionadas con hardware y software.",
+      "Mantenimiento y actualización de equipos informáticos, asegurando un entorno tecnológico eficiente y funcional.",
+      "Colaboración en la implementación de nuevas tecnologías y herramientas digitales para mejorar la experiencia educativa."
+    ],
+    tecnologias: [],
   },
   {
-    fecha: "2013 - 2021",
-    puesto: "Profesor de natación",
-    empresa: "Maristes Sants-Les Corts",
-    descripcion: "Descripción del puesto como desarrollador web",
+    fecha: "2008 - 2021",
+    puesto: "Monitor de natación",
+    localidad: "Maristes Sants-Les Corts",
+    descripcion: [
+      "Enseñanza de natación a niños y adultos, adaptando las clases a diferentes niveles y necesidades.",
+      "Organización de actividades acuáticas y eventos deportivos, fomentando la participación y el trabajo en equipo.",
+      "Desarrollo de habilidades de comunicación y liderazgo al interactuar con estudiantes y padres."
+    ],
+    tecnologias: [],
   },
+  
 ];
+
+const components = await Astro.glob(
+  "../components/icons/knowledge_icons/*.astro",
+);
 ---
 
 <section class="py-6 my-6" id="experiencia">
-  <h3 class="text-2xl mb-6">Experiencia Laboral</h3>
+  <h3 class="text-2xl mb-6 text-indigo-700 font-bold">Experiencia Laboral</h3>
   <div class="line py-6">
     <div class="mb-4">
       {
         experiencias.map((experiencia) => (
           <article class="flex flex-row mb-8">
-            <div class="point"></div>
-            <div class="flex flex-row w-full">
-              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-300 max-w-32 md:max-w-xs">{experiencia.fecha}</h4>
+            <div class="point" />
+            <div class="flex flex-col w-full md:flex-row">
+              <h4 class="flex-1 text-xl mr-2 dark:text-indigo-700 text-indigo-500 md:max-w-32">
+                {experiencia.fecha}
+              </h4>
               <div class="flex-1 w-full">
-                <h4 class="text-xl mb-2">{experiencia.puesto}</h4>
-                <p>{experiencia.empresa}</p>
-                <p>{experiencia.descripcion}</p>
+                <h4 class="text-xl mb-2 dark:text-indigo-500 text-indigo-800 font-bold">{experiencia.puesto}</h4>
+                <p>
+                  <i class="dark:text-indigo-300 text-indigo-400">{experiencia.localidad}</i>
+                </p>
+                {experiencia.descripcion && experiencia.descripcion[0] !== "" &&
+                  <ul>
+                    {experiencia.descripcion.map((desc) => (
+                      <li>{desc}</li>
+                    ))}
+                  </ul>
+                }
+                <div class="grid-conocimientos">
+                  {components.map(
+                    (component) =>
+                      experiencia.tecnologias.includes(
+                        component.default.name,
+                      ) && (
+                        <div>
+                          <component.default />
+                        </div>
+                      ),
+                  )}
+                </div>
               </div>
             </div>
           </article>
@@ -61,7 +156,7 @@ const experiencias = [
     </div>
   </div>
 </section>
-<style >
+<style>
   .line {
     border-left: 2px solid rgba(58, 119, 168, 0.3);
     padding-left: 1rem;
@@ -78,5 +173,24 @@ const experiencias = [
     position: absolute;
     left: -22px;
     top: 10px;
+  }
+  svg {
+    width: 25px;
+    height: 100%;
+  }
+
+  #experiencia .grid-conocimientos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    gap: 1rem;
+    margin: 10px 0;
+  }
+  #experiencia ul {
+    list-style: disc !important;
+    padding-left: 1.5rem;
+    margin: 10px 0;
+  }
+  #experiencia ul li {
+    display: list-item;
   }
 </style>
