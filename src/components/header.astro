@@ -2,7 +2,6 @@
 import ThemeToggle from "./themeIcon.astro";
 //si estamnos en la pagina 404 cambiamos lo items del nav
 
-const pagePathname = Astro.url.pathname;
 let navItems = [
   {
     title: "Inicio",
@@ -37,7 +36,7 @@ let navItems = [
   {
     title: "Contacto",
     label: "contacto",
-    url: "mailto:mayne.isaac@gmail.com",
+    url: "/#contactForm",
     icon: "contact.svg"
   },
 ];
@@ -47,8 +46,7 @@ let navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center py-3 gap-5"
-  >
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center py-3 gap-5">
     {
       navItems.map((link) => (
         <a

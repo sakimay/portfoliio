@@ -1,74 +1,84 @@
----
-// Componente Astro: formulario listo para Netlify + Tailwind
-// Guardar como `src/components/NetlifyForm.astro` o en la carpeta que prefieras.
----
-
 <form
   name="contact"
   method="POST"
   netlify
   class="w-full max-w-2xl mx-auto my-6 p-6 bg-indigo-300 dark:bg-indigo-950 backdrop-blur-md rounded-2xl shadow-lg"
+  id="contactForm"
 >
-  <!-- Campo obligatorio para Netlify -->
   <input type="hidden" name="form-name" value="contact" />
-
-  <!-- Honeypot (campo invisible para bots) -->
-  <div class="sr-only">
-    <label>Si eres humano, deja este campo en blanco: <input name="bot-field" /></label>
-  </div>
 
   <h2 class="text-2xl font-semibold mb-4">Contacto</h2>
 
-  <label class="block mb-4">
-    <span class="text-sm font-medium">Nombre</span>
+  <!-- NOMBRE -->
+  <div class="mb-4">
+    <label class="block text-sm font-medium">Nombre</label>
     <input
       type="text"
       name="name"
       required
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
       placeholder="Tu nombre"
     />
-  </label>
+    <p class="mt-1 text-red-500 text-sm hidden" data-error="name">Este campo es obligatorio.</p>
+  </div>
 
-  <label class="block mb-4">
-    <span class="text-sm font-medium">Correo electrónico</span>
+  <!-- EMAIL -->
+  <div class="mb-4">
+    <label class="block text-sm font-medium">Correo electrónico</label>
     <input
       type="email"
       name="email"
       required
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
       placeholder="tú@ejemplo.com"
     />
-  </label>
+    <p class="mt-1 text-red-500 text-sm hidden" data-error="email">Ingresa un correo válido.</p>
+  </div>
 
-  <label class="block mb-4">
-    <span class="text-sm font-medium">Asunto</span>
-    <input
-      type="text"
-      name="subject"
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
-      placeholder="¿Sobre qué quieres hablar?"
-    />
-  </label>
-
-  <label class="block mb-6">
-    <span class="text-sm font-medium">Mensaje</span>
+  <!-- MENSAJE -->
+  <div class="mb-6">
+    <label class="block text-sm font-medium">Mensaje</label>
     <textarea
       name="message"
       required
       rows="5"
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
       placeholder="Escribe tu mensaje aquí..."
     ></textarea>
-  </label>
+    <p class="mt-1 text-red-500 text-sm hidden" data-error="message">Este campo no puede estar vacío.</p>
+  </div>
 
-  <div class="flex items-center justify-end gap-4">
+  <div class="flex items-center justify-end">
     <button
       type="submit"
-      class="text-white bg-indigo-600 dark:bg-indigo-600 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-500"
+      class="text-white bg-indigo-500 inline-flex items-center gap-2 rounded-full px-10 py-2.5 font-semibold shadow-sm hover:shadow-md focus:outline-none"
     >
       Enviar
     </button>
-
   </div>
 </form>
+
+<!-- VALIDACIÓN VISUAL -->
+<script is:inline>
+  document.getElementById("contactForm").addEventListener("submit", function (event) {
+    let valid = true;
+
+    const fields = ["name", "email", "message"];
+
+    fields.forEach((field) => {
+      const input = document.querySelector(`[name="${field}"]`);
+      const errorMsg = document.querySelector(`[data-error="${field}"]`);
+
+      if (!input.value.trim()) {
+        valid = false;
+        input.classList.add("border-red-500");
+        errorMsg.classList.remove("hidden");
+      } else {
+        input.classList.remove("border-red-500");
+        errorMsg.classList.add("hidden");
+      }
+    });
+
+    if (!valid) event.preventDefault();
+  });
+</script>
