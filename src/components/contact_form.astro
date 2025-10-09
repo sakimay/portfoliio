@@ -1,0 +1,75 @@
+---
+// Componente Astro: formulario listo para Netlify + Tailwind
+// Guardar como `src/components/NetlifyForm.astro` o en la carpeta que prefieras.
+---
+
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="w-full max-w-2xl mx-auto my-6 p-6 bg-indigo-300 dark:bg-indigo-950 backdrop-blur-md rounded-2xl shadow-lg"
+>
+  <!-- Campo obligatorio para Netlify -->
+  <input type="hidden" name="form-name" value="contact" />
+
+  <!-- Honeypot (campo invisible para bots) -->
+  <div class="sr-only">
+    <label>Si eres humano, deja este campo en blanco: <input name="bot-field" /></label>
+  </div>
+
+  <h2 class="text-2xl font-semibold mb-4">Contacto</h2>
+
+  <label class="block mb-4">
+    <span class="text-sm font-medium">Nombre</span>
+    <input
+      type="text"
+      name="name"
+      required
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      placeholder="Tu nombre"
+    />
+  </label>
+
+  <label class="block mb-4">
+    <span class="text-sm font-medium">Correo electrónico</span>
+    <input
+      type="email"
+      name="email"
+      required
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      placeholder="tú@ejemplo.com"
+    />
+  </label>
+
+  <label class="block mb-4">
+    <span class="text-sm font-medium">Asunto</span>
+    <input
+      type="text"
+      name="subject"
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      placeholder="¿Sobre qué quieres hablar?"
+    />
+  </label>
+
+  <label class="block mb-6">
+    <span class="text-sm font-medium">Mensaje</span>
+    <textarea
+      name="message"
+      required
+      rows="5"
+      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-300 px-4 py-2 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-400"
+      placeholder="Escribe tu mensaje aquí..."
+    ></textarea>
+  </label>
+
+  <div class="flex items-center justify-end gap-4">
+    <button
+      type="submit"
+      class="text-white bg-indigo-600 dark:bg-indigo-600 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-500"
+    >
+      Enviar
+    </button>
+
+  </div>
+</form>
