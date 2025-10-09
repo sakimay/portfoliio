@@ -73,7 +73,6 @@ const THEMES = ["Light", "Dark", "System"]
   }
 
   const updateIcon = (themePreference) => {
-    console.log('updateIcon');
     document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
       element.style.scale = element.id === themePreference ? "1" : "0"
     })
@@ -83,7 +82,6 @@ const THEMES = ["Light", "Dark", "System"]
     if (remove != null) {
       remove()
     }
-    console.log('update');
     matchMedia.addEventListener("change", updateTheme)
     remove = () => {
       matchMedia.removeEventListener("change", updateTheme)
