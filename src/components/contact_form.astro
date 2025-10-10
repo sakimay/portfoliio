@@ -57,28 +57,3 @@
     </button>
   </div>
 </form>
-
-<!-- VALIDACIÓN VISUAL -->
-<script is:inline>
-  document.getElementById("contactForm").addEventListener("submit", function (event) {
-    let valid = true;
-
-    const fields = ["name", "email", "message"];
-
-    fields.forEach((field) => {
-      const input = document.querySelector(`[name="${field}"]`);
-      const errorMsg = document.querySelector(`[data-error="${field}"]`);
-
-      if (!input.value.trim()) {
-        valid = false;
-        input.classList.add("border-red-500");
-        errorMsg.classList.remove("hidden");
-      } else {
-        input.classList.remove("border-red-500");
-        errorMsg.classList.add("hidden");
-      }
-    });
-
-    if (!valid) event.preventDefault();
-  });
-</script>
