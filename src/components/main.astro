@@ -12,22 +12,24 @@ let total_years = current_year - initial_year;
 ---
 <section class="flex flex-col justify-center md:flex-row items-center py-10 min-h-[70vh]" id="inicio">
     <div>
-        <Picture src={myImage} formats={['webp','jpg','png']} alt="saki avatar" width={180} height={180} class='rounded-full'/>
+        <Picture src={myImage} formats={['webp','jpg','png']} alt="Isaac Mayné, avatar profesional" width={180} height={180} class='rounded-full'/>
     </div>
     <div class="flex flex-col justify-center pt-6 md:pl-6">
         <h1 class="text-4xl text-center md:text-left text-indigo-700 dark:text-zinc-200" >Isaac Mayné</h1>
-        <h2 class="text-xl font-thin text-center md:text-left dark:text-indigo-500">Desarrollador Fullstack</h2>
-        <p class="dark:text-zinc-200 text-center md:text-left">Técnico superior en desarrollo de aplicaciones web, con más de {total_years} años de experiencia.</p>
+        <h2 class="text-xl font-thin text-center md:text-left dark:text-indigo-500 my-2">Frontend Developer | React & Next.js</h2>
+        <p class="dark:text-zinc-200 text-center md:text-left">
+            Técnico superior en desarrollo de aplicaciones web, especializado en <b class="text-indigo-400">React</b>, <b class="text-indigo-400">Next.js</b> y <b class="text-indigo-400">TypeScript</b>, creando interfaces dinámicas y escalables, con más de {total_years} años de experiencia.
+          </p>
         <div class="mt-4 flex items-center justify-center md:justify-start">
             <Social platform="github" username="sakimay" className="mr-2">
-                <GithubIcon className="dark:fill-indigo-300 fill-indigo-400"/>
+                <GithubIcon className="dark:fill-indigo-300 fill-indigo-400" title="GitHub"/>
             </Social>
             <Social platform="linkedin" username="in/isaac-mayne-perez">
-                <LinkedinIcon className="dark:fill-indigo-300 fill-indigo-400"/>
+                <LinkedinIcon className="dark:fill-indigo-300 fill-indigo-400" />
             </Social>
         </div>
         <div class="mt-4 flex justify-center md:justify-start">
-            <a href="#contactForm" class="mt-4 text-white bg-indigo-500 rounded-full px-10 py-2.5 font-semibold shadow-sm hover:shadow-md focus:outline-none">Contactar</a>
+            <a href="#contactForm" aria-label="Contactar con Isaac Mayné" class="mt-4 text-white bg-indigo-500 rounded-full px-10 py-2.5 font-semibold shadow-sm hover:shadow-md hover:scale-105 transition-transform duration-200 focus:outline-none">Contactar</a>
         </div>
     </div>
 </section>

@@ -1,7 +1,20 @@
 ---
 const current_year = new Date().getFullYear();
+import Social from "./social.astro";
+import GithubIcon from "../icons/github.astro";
+import LinkedinIcon from "../icons/linkedin.astro";
 ---
 
-<footer class="flex justify-center p-4 mt-auto">
-    <p class="text-xs">© {current_year} Isaac Mayné Pérez. Todos los derechos reservados.</p>
-</footer>
+<footer class="flex flex-col items-center p-6 mt-auto text-center text-xs dark:text-gray-400">
+    <p class="mb-2">© {current_year} Isaac Mayné Pérez</p>
+    <p class="text-[11px] italic">Desarrollador Frontend especializado en React y Next.js</p>
+    <div class="flex mt-2">
+        <Social platform="github" username="sakimay" className="mr-2">
+            <GithubIcon className="dark:fill-indigo-300 fill-indigo-400" title="GitHub"/>
+        </Social>
+        <Social platform="linkedin" username="in/isaac-mayne-perez">
+            <LinkedinIcon className="dark:fill-indigo-300 fill-indigo-400" />
+        </Social>
+    </div>
+  </footer>
+  

@@ -7,42 +7,45 @@
 >
   <input type="hidden" name="form-name" value="contact" />
 
-  <h2 class="text-2xl font-semibold mb-4">Contacto</h2>
+  <h2 class="text-2xl font-semibold mb-4">Ponte en contacto</h2>
 
   <!-- NOMBRE -->
   <div class="mb-4">
-    <label class="block text-sm font-medium">Nombre</label>
+    <label for="name" class="block text-sm font-medium">Nombre</label>
     <input
       type="text"
       name="name"
       required
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
+      class="focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-gray-900 bg-white dark:text-white dark:bg-gray-800 dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
       placeholder="Tu nombre"
+      id="name"
     />
     <p class="mt-1 text-red-500 text-sm hidden" data-error="name">Este campo es obligatorio.</p>
   </div>
 
   <!-- EMAIL -->
   <div class="mb-4">
-    <label class="block text-sm font-medium">Correo electrónico</label>
+    <label for="email" class="block text-sm font-medium">Correo electrónico</label>
     <input
       type="email"
       name="email"
       required
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
+      class="focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-gray-900 bg-white dark:text-white dark:bg-gray-800 dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
       placeholder="tú@ejemplo.com"
+      id="email"
     />
     <p class="mt-1 text-red-500 text-sm hidden" data-error="email">Ingresa un correo válido.</p>
   </div>
 
   <!-- MENSAJE -->
   <div class="mb-6">
-    <label class="block text-sm font-medium">Mensaje</label>
+    <label for="message" class="block text-sm font-medium">Mensaje</label>
     <textarea
+      id="message"
       name="message"
       required
       rows="5"
-      class="mt-1 block w-full text-white bg-white dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
+      class="focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-gray-900 bg-white dark:text-white dark:bg-gray-800 dark:bg-gray-800 rounded-lg border px-4 py-2 placeholder-gray-400 focus:outline-none"
       placeholder="Escribe tu mensaje aquí..."
     ></textarea>
     <p class="mt-1 text-red-500 text-sm hidden" data-error="message">Este campo no puede estar vacío.</p>
@@ -51,7 +54,7 @@
   <div class="flex items-center justify-end">
     <button
       type="submit"
-      class="text-white bg-indigo-500 inline-flex items-center gap-2 rounded-full px-10 py-2.5 font-semibold shadow-sm hover:shadow-md focus:outline-none"
+      class="hover:scale-105 transition-transform duration-200 text-white bg-indigo-500 inline-flex items-center gap-2 rounded-full px-10 py-2.5 font-semibold shadow-sm hover:shadow-md focus:outline-none"
     >
       Enviar
     </button>

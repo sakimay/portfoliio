@@ -9,20 +9,6 @@ import luckyRunnersImage from "../assets/lucky_runners_image.jpg";
     <h3 class="text-2xl mb-6 text-indigo-700 font-bold">Proyectos personales</h3>
     <div class="flex flex-col justify-center gap-4">
 
-        <a href="https://www.rockrunners.es" class="w-full bg-indigo-100 rounded-md shadow-md flex flex-col md:flex-row relative overflow-hidden" target="_blank">
-            <div class="image md:max-w-[25%]">
-                <Image src={rockRunnersImage} alt="rock runners image" class='w-full h-full object-cover'/>
-            </div>
-            <div class="p-4 flex flex-col text-black">    
-                <h4 class="font-bold text-indigo-600 text-xl">Rock Runners</h4>
-                <span class="text-sm italic">rockrunners.es</span>
-                <br>
-                <p>Rockrunners.es es una aplicación web creada con Next.js (React.js) y desplegada en Vercel.
-                Ofrece una calculadora de ritmos orientada a runners, permitiendo calcular el ritmo necesario para completar distintas distancias.
-                La plataforma está pensada como una comunidad en evolución, con nuevas funcionalidades previstas a futuro.
-                El proyecto destaca por su rendimiento, buena experiencia de usuario y un enfoque modular que facilita su escalabilidad.</p>
-            </div>
-        </a>
         <a href="https://www.luckyrunners.net" class="w-full bg-indigo-100 rounded-md shadow-md flex flex-col md:flex-row relative overflow-hidden" target="_blank">
             <div class="image md:max-w-[25%]">
                 <Image src={luckyRunnersImage} alt="rock runners image" class='w-full h-full object-cover'/>
@@ -30,10 +16,18 @@ import luckyRunnersImage from "../assets/lucky_runners_image.jpg";
             <div class="p-4 flex flex-col text-black">    
                 <h4 class="font-bold text-indigo-600 text-xl">Lucky Runners</h4>
                 <span class="text-sm italic">luckyrunners.net</span>
-                <br>
-                <p>Lucky Runners es una web creada para un club de running en Sant Cugat, centrado en la comunidad, el entrenamiento y la superación personal. Desarrollada con Astro y desplegada en Netlify, ofrece un diseño limpio, rápido y optimizado para dispositivos móviles. Presenta información sobre el club, su filosofía, entrenamientos y coaching, con una navegación clara y visualmente atractiva.</p>
+                <p class="mt-4">Web para un club de running en Sant Cugat, desarrollada con <strong>Astro</strong> y componentes <strong>React</strong>. Diseño limpio y responsive, optimizado para dispositivos móviles, que muestra entrenamientos, coaching y filosofía del club. Destaca por la navegación clara y la integración de componentes reutilizables en React.</p>
             </div>
         </a>
-
+        <a href="https://www.rockrunners.es" class="w-full bg-indigo-100 rounded-md shadow-md flex flex-col md:flex-row relative overflow-hidden" target="_blank">
+            <div class="image md:max-w-[25%]">
+                <Image src={rockRunnersImage} alt="rock runners image" class='w-full h-full object-cover'/>
+            </div>
+            <div class="p-4 flex flex-col text-black">    
+                <h4 class="font-bold text-indigo-600 text-xl">Rock Runners</h4>
+                <span class="text-sm italic">rockrunners.es</span>
+                <p class="mt-4">Aplicación web construida con <strong>Next.js y React</strong> y desplegada en Vercel. Incluye una calculadora de ritmos para corredores, con una interfaz modular y escalable. El proyecto destaca por su experiencia de usuario, rendimiento y facilidad para ampliar con nuevas funcionalidades.</p>
+            </div>
+        </a>
     </div>
 </section>
